@@ -1,0 +1,14 @@
+<h1>Registration</h1>
+
+<!-- last_user -->
+
+<table>
+
+<% @users.each do |user| %>
+	<tr><td>ID: <%= user.id %></td></tr>
+    <tr><td>Name: <%= user.name %></td></tr>
+    <tr><td>Email: <%= user.email %></td></tr>
+    <tr><td><br/></td></tr>
+<% end %>
+
+</table>
