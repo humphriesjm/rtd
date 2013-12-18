@@ -1,14 +1,16 @@
+<style>
+.btn-white-text, a:visited {
+	color: #fff;
+}
+</style>
+
 <h1>Registration</h1>
 
-<!-- last_user -->
+<br/>
+<div class="btn-group">
 
-<table>
+	<%= link_to 'Register for RTD', new_user_path, class: 'btn btn-primary btn-white-text' %><br/><br/>
+	<%= link_to 'View Registered People', users_path, class: 'btn btn-primary btn-white-text' %>
 
-<% @users.each do |user| %>
-	<tr><td>ID: <%= user.id %></td></tr>
-    <tr><td>Name: <%= user.name %></td></tr>
-    <tr><td>Email: <%= user.email %></td></tr>
-    <tr><td><br/></td></tr>
-<% end %>
+</div>
 
-</table>

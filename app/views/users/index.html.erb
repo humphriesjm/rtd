@@ -1,2 +1,37 @@
-<h1>UsersController#index</h1>
-<p>Find me in app/views/users_controller/index.html.erb</p>
+<h1>People Registered for RTD</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Organization</th>
+      <th>Birthdate</th>
+      <th>Weight</th>
+      <th>Height</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+	<tbody>
+	<% @users.each do |u| %>
+		<tr>
+			<td><%= u.name %></td>
+			<td><%= u.address %></td>
+			<td><%= u.email %></td>
+			<td><%= u.phone %></td>
+			<td><%= u.org %></td>
+			<td><%= u.birthdate %></td>
+			<td><%= u.weight %></td>
+			<td><%= u.height %></td>
+			<td><%= u.sex %></td>
+		</tr>
+	</tbody>
+	<% end %>
+  </tbody>
+</table>
+
+<p>
+	<%= link_to 'Back', home_registration_path, class: 'btn' %>
+</p>

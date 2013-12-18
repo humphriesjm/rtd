@@ -39,6 +39,12 @@
     body {
       background-color: #dbdbde;
     }
+    .navbar .nav>li>a:focus, .navbar .nav>li>a:hover {
+      background-color: #dbdbde;
+    }
+    /*.navbar .nav>li>a:active {
+      color: #ff00ff;
+    }*/
     </style>
   </head>
   <body>
@@ -46,20 +52,20 @@
     <div class="navbar navbar-fluid-top">
       <div class="navbar-inner">
         <div class="container-fluid">
-<!--           <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </a> -->
+          </a>
           <%= link_to image_tag("rtd_logo_color_small.png"), home_index_path, class: 'brand' %>
           <div class="container-fluid nav-collapse">
             <ul class="nav nav-pills">
-              <li><%= link_to "About the Cause", home_about_path  %></li>
-              <li><%= link_to "Event Details", home_events_path  %></li>
-              <li><%= link_to "Registration", home_registration_path  %></li>
-              <li><%= link_to "Social Media", home_social_path  %></li>
-              <li><%= link_to "Press/Media", home_press_path  %></li>
-              <li><%= link_to "Contact Us", home_contact_path  %></li>
+              <li><%= link_to "About the Cause",  home_about_path  %></li>
+              <li><%= link_to "Event Details",    home_events_path  %></li>
+              <li><%= link_to "Registration",     home_registration_path  %></li>
+              <li><%= link_to "Social Media",     home_social_path  %></li>
+              <li><%= link_to "Press/media",      home_press_path  %></li>
+              <li><%= link_to "Contact Us",       home_contact_path  %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
