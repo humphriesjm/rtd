@@ -31,6 +31,14 @@ describe SessionsController do
 
       response.should redirect_to(root_path)
     end
+
+    it "shows form again and displays flash message on failed login" do
+      user = User.create(user_params)
+      post :create, session: {email: 'a', password: 'b'}
+    
+      response.should be_success
+      response.should render_template("new")
+    end
   end
 
 end
