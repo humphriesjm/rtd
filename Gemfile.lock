@@ -47,6 +47,8 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.0.2)
+    haml (4.0.5)
+      tilt
     highline (1.6.20)
     hike (1.2.3)
     i18n (0.6.5)
@@ -161,6 +163,7 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   capistrano (~> 2.15)
   coffee-rails (~> 4.0.0)
+  haml
   jbuilder (~> 1.2)
   jquery-rails
   less-rails

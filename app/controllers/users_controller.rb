@@ -23,7 +23,7 @@ class UsersController < ApplicationController
         format.html { redirect_to users_path, notice: 'User was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
       else
-        binding.pry
+        # binding.pry
         format.html { render action: 'new' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -58,6 +58,10 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :address, :email, :phone, :org, :birthdate, :weight, :height, :sex)
+      params.require(:user).permit(
+        :name, :address, :email, :phone, :org,
+        :birthdate, :weight, :height, :sex,
+        :password, :password_confirmation
+      )
     end
 end
