@@ -18,5 +18,10 @@ describe AuthenticationHelper do
 
       helper.current_user.should == user
     end
+
+    it "returns nil if there's no user logged in" do
+      session[:user_id] = nil
+      helper.current_user.should == nil
+    end
   end
 end
