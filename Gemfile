@@ -7,6 +7,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'capistrano', '~> 2.15'
+gem 'database_cleaner'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
