@@ -24,4 +24,15 @@ describe User do
 		user.errors.messages[:password_confirmation].should_not be_nil # "doesn't match Password"
 	end
 
+	it "saves user with proper passwords" do
+		user = User.new
+		user.password = "foobar"
+		user.password_confirmation = "foobar"
+		user.name = "foo1"
+		user.email = "foo1@example.com"
+		user.org = "foo organization"
+		user.save
+		user.valid?.should be_true
+	end
+
 end
