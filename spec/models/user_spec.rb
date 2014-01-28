@@ -13,7 +13,6 @@ describe User do
 		user = User.new
 		user.password = "foobar"
 		user.save
-		# puts user.errors.messages
 		user.errors.messages[:password_confirmation].should_not be_nil
 	end
 
@@ -22,7 +21,6 @@ describe User do
 		user.password = "foobar"
 		user.password_confirmation = "bazquux"
 		user.save
-		puts user.errors.messages
 		user.errors.messages[:password_confirmation].should_not be_nil # "doesn't match Password"
 	end
 
