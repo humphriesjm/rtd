@@ -25,7 +25,7 @@ describe AuthenticationHelper do
     end
 
     it "only looks up user once" do
-      User.expects(:find).with(1).once
+      User.expects(:find).with(1).returns({}).once
 
       session[:user_id] = 1
 
