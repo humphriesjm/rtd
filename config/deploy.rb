@@ -3,6 +3,7 @@ set :application, "RTD"
 set :scm, :git
 set :repo_url, "git@github.com:humphriesjm/rtd.git"
 set :deploy_to, "/opt/rtd_rails_app/"
+# set :user, "root"
 
 set :ssh_options, { forward_agent: true }
 
@@ -35,6 +36,11 @@ namespace :deploy do
     end
   end
 
+  desc "Add DB Indexes"
+  task :migrator, :roles => :db do
+    run "cd #{current_path}; rake db:migrate RAILS_ENV=#{rails_env}"
+  end
+
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
@@ -46,5 +52,7 @@ namespace :deploy do
   end
 
   after :finishing, 'deploy:cleanup'
-
 end
+
+after "deploy", "deploy:migrator"
+after "deploy", "deploy:migrate"
