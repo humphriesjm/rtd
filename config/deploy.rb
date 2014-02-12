@@ -17,7 +17,7 @@ set :pty, true
 # SSHKit.config.command_map[:rake]  = "bundle exec rake" #8
 # SSHKit.config.command_map[:rails] = "bundle exec rails"
 
-set :keep_releases, 20
+set :keep_releases, 10
 
 # set :linked_files, %w{config/database.yml}
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
@@ -31,16 +31,17 @@ namespace :deploy do
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
+      execute :touch, release_path.join('tmp/restart.txt')
     end
   end
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+      within release_path do
+        execute :rake, 'cache:clear'
+        execute :rake, 'db:migrate'
+      end
     end
   end
 
