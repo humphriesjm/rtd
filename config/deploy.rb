@@ -4,6 +4,7 @@ set :scm, :git
 set :repo_url, "git@github.com:humphriesjm/rtd.git"
 set :deploy_to, "/opt/rtd_rails_app/"
 # set :user, "root"
+set :migration_role, 'root'
 
 set :ssh_options, { forward_agent: true }
 
