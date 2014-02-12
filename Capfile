@@ -10,9 +10,9 @@ require 'capistrano/deploy'
 #   https://github.com/capistrano/rails/tree/master/assets
 #   https://github.com/capistrano/rails/tree/master/migrations
 #
-# require 'capistrano/rvm'
-# require 'capistrano/rbenv'
-# require 'capistrano/chruby'
+require 'capistrano/rvm'
+require 'capistrano/rbenv'
+require 'capistrano/chruby'
 require 'capistrano/bundler'
 require 'capistrano/rails' #/assets'
 require 'capistrano/rails/migrations'
