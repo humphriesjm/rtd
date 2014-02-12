@@ -55,4 +55,3 @@ namespace :deploy do
 end
 
 after "deploy", "deploy:migrator"
-after "deploy", "deploy:migrate"
