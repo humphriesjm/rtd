@@ -15,8 +15,8 @@ set :log_level, :debug
 set :format, :pretty
 set :pty, true
 
-# SSHKit.config.command_map[:rake]  = "bundle exec rake" #8
-# SSHKit.config.command_map[:rails] = "bundle exec rails"
+SSHKit.config.command_map[:rake]  = "bundle exec rake" #8
+SSHKit.config.command_map[:rails] = "bundle exec rails"
 
 set :keep_releases, 10
 
