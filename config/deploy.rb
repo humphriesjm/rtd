@@ -38,7 +38,7 @@ namespace :deploy do
 
   desc "Add DB Indexes"
   task :migrator do
-    run "cd #{current_path}; rake db:migrate RAILS_ENV=#{rails_env}"
+    run "cd #{current_path}; rake db:migrate"
   end
 
   after :restart, :clear_cache do
