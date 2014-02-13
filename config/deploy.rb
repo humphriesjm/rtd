@@ -4,6 +4,7 @@ set :scm, :git
 set :repo_url, "git@github.com:humphriesjm/rtd.git"
 set :deploy_to, "/opt/rtd_rails_app/"
 # set :user, "root"
+set :rvm_ruby_version, '2.0.0-p353'
 set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 set :migration_role, 'root'
 
@@ -17,7 +18,8 @@ set :log_level, :debug
 set :format, :pretty
 set :pty, true
 
-SSHKit.config.command_map[:rake]  = "bundle exec rake" #8
+# SSHKit.config.command_map[:rake]  = "bundle exec rake" #8
+SSHKit.config.command_map[:rake] = "#{fetch(:default_env)[:rvm_bin_path]}/rvm ruby-#{fetch(:rvm_ruby_version)} do bundle exec rake"
 SSHKit.config.command_map[:rails] = "bundle exec rails"
 
 set :keep_releases, 10
