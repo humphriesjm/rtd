@@ -5,7 +5,8 @@ set :repo_url, "git@github.com:humphriesjm/rtd.git"
 set :deploy_to, "/opt/rtd_rails_app/"
 # set :user, "root"
 set :rvm_ruby_version, '2.0.0-p353'
-set :default_env, { rvm_bin_path: '~/.rvm/bin' }
+# set :default_env, { rvm_bin_path: '~/.rvm/bin' }
+set :default_env, { path: "#{fetch :path_to_rvm}/gems/#{fetch :ruby_version}/bin:#{fetch :path_to_rvm}/gems/#{fetch :ruby_version}@global/bin:#{fetch :path_to_rvm}/rubies/#{fetch :ruby_version}/bin/:#{fetch :path_to_rvm}/bin/:$PATH" }
 set :migration_role, 'root'
 
 set :ssh_options, { forward_agent: true }
