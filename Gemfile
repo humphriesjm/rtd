@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
 gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.15'
 gem 'capistrano', '~> 3.1' #'~> 2.15'
 gem 'capistrano-bundler', '~> 1.1'
 gem 'capistrano-rails', '~> 1.1'

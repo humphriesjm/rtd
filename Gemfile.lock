@@ -185,7 +185,7 @@ DEPENDENCIES
   jquery-rails
   less-rails
   mocha
-  mysql2
+  mysql2 (~> 0.3.15)
   pry
   rails (= 4.0.0)
   rake
